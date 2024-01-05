@@ -123,6 +123,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1089424201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7aea2d469d67de44f9dd680a5088c739,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501376771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1089424205
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089424201}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6fe5a9797d4cfda4689467c46bf0f116, type: 3}
+  m_Controller: {fileID: 9100000, guid: b766886f6a607004696cf848ef18d7cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1501376771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.433
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
       propertyPath: m_LocalRotation.w
@@ -175,6 +202,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cb3569b3d4c232045b6ea3cb7d4366b1, type: 2}
+    - target: {fileID: 13700002, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700004, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
       propertyPath: m_FadeMode
       value: 1
@@ -183,10 +222,26 @@ PrefabInstance:
       propertyPath: m_AnimateCrossFading
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 20500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 20500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+    - {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 100046, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+    - {fileID: 100048, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7aea2d469d67de44f9dd680a5088c739,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1089424205}
   m_SourcePrefab: {fileID: 100100000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
 --- !u!1 &1702650199
 GameObject:
