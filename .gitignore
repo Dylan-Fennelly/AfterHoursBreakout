@@ -59,7 +59,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
-*.app
+*.appsta
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -75,3 +75,5 @@ crashlytics-build.properties
 #Remove .idea 
 .idea
 Buildv1
+Assets/After Hours Breakout/Third Party Assets
+Assets/TextMesh Pro
