@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     private void BakeNavMesh()
     {
+        Console.WriteLine("Baking NavMesh");
         surface.BuildNavMesh();
+        Console.WriteLine("NavMesh Baked");
     }
 }
