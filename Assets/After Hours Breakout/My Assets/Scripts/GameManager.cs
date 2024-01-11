@@ -30,20 +30,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void OnDoorOpen()
-    {
-        BakeNavMesh();
     
-    }
     [Button]
     public void turnOnLights()
     {
         emptyGameEvent.Raise(new Empty());
     }
-    private void BakeNavMesh()
-    {
-        Console.WriteLine("Baking NavMesh");
-        surface.BuildNavMesh();
-        Console.WriteLine("NavMesh Baked");
-    }
+
 }
