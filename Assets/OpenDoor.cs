@@ -4,17 +4,14 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.AI;
 
-public class DoorInteraction: MonoBehaviour,IIteractable
+public class OpenDoor : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private NavMeshObstacle obstacle;
+    protected Animator animator;
     //Use odin to make a button that trggers the function in the editer
     [Button]
-    public void Interact()
+    public virtual void Interact()
     {
-        obstacle.enabled = false;
-        animator.SetBool("doorOpened",true);
+        animator.SetBool("doorOpened", true);
     }
 }

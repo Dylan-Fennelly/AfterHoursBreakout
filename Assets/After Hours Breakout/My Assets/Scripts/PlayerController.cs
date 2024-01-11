@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     // New fields for delayed interaction
     bool isMovingToInteractable = false;
-    IIteractable currentInteractable;
+    IInteractable currentInteractable;
 
     void Awake()
     {
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, interactableLayers))
         {
             // Check if the clicked object is an interactive object
-            if (hit.transform.TryGetComponent<IIteractable>(out var interactable))
+            if (hit.transform.TryGetComponent<IInteractable>(out var interactable))
             {
                 // Move to the interactable object before interacting
                 isMovingToInteractable = true;
