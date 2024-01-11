@@ -73,16 +73,8 @@ crashlytics-build.properties
 #Odin Plugin files
 [Aa]ssets/Plugins/Sirenix/
 #Remove .idea 
-.idea
-Buildv1
-#Assets/After Hours Breakout/Third Party Assets/Enviroment/
 
 
-Assets/After Hours Breakout/Third Party Assets/ADI/
-#Assets/After Hours Breakout/Third Party Assets/Electrical Panel/
-#Assets/After Hours Breakout/Third Party Assets/Common/
-#Assets/After Hours Breakout/Third Party Assets/Audio/
-#Assets/After Hours Breakout/Third Party Assets/Meshes/
-#Assets/After Hours Breakout/Third Party Assets/Materials/
-#Assets/After Hours Breakout/Third Party Assets/Textures/
+
+
 Assets/TextMesh Pro
