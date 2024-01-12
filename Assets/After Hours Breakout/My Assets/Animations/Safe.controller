@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: PasswordEntered
+    m_ConditionEvent: doorOpened
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1171108744526905099}
@@ -59,7 +59,7 @@ AnimatorController:
   m_Name: Safe
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: PasswordEntered
+  - m_Name: doorOpened
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
