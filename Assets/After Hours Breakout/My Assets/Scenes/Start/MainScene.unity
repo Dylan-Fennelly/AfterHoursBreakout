@@ -3245,6 +3245,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 406678413}
+    - targetCorrespondingSourceObject: {fileID: -9032057211456673312, guid: 1929e272d173d0e4cb1e456190d0b542,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1449620864}
+    - targetCorrespondingSourceObject: {fileID: -9032057211456673312, guid: 1929e272d173d0e4cb1e456190d0b542,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1449620863}
   m_SourcePrefab: {fileID: 100100000, guid: 1929e272d173d0e4cb1e456190d0b542, type: 3}
 --- !u!4 &406678412 stripped
 Transform:
@@ -3272,6 +3280,30 @@ MonoBehaviour:
       - m_Target: {fileID: 406678414}
         m_TargetAssemblyTypeName: OpenDoor, Assembly-CSharp
         m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 435296995}
+        m_TargetAssemblyTypeName: ChangeColour, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1620640115}
+        m_TargetAssemblyTypeName: CameraChangeFov, Assembly-CSharp
+        m_MethodName: Change
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3310,6 +3342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   safeUnlocked: {fileID: 11400000, guid: ba3fae0ad3314ab4b9eae130a54f5ef6, type: 2}
   password: 1234
+  input: 
 --- !u!114 &406678416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,9 +3392,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 4.6
-  m_Height: 8.989101
+  m_Height: 15.58
   m_Direction: 1
-  m_Center: {x: 23.2, y: 2.5, z: 21.3}
+  m_Center: {x: 23.2, y: 5.25, z: 21.3}
 --- !u!1 &433847963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,6 +3639,7 @@ GameObject:
   - component: {fileID: 435296992}
   - component: {fileID: 435296994}
   - component: {fileID: 435296993}
+  - component: {fileID: 435296995}
   m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
@@ -3713,6 +3747,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &435296995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435296991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802bd5a12800d624f97618c1068ec3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  green: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &436831322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4813057156619001611, guid: a55c6d00c97cff046a06dd276fcfeb21,
@@ -12100,7 +12147,7 @@ GameObject:
   - component: {fileID: 712872301}
   - component: {fileID: 712872300}
   m_Layer: 0
-  m_Name: Virtual Camera
+  m_Name: Safe Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12122,14 +12169,14 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 4
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 25.97
+    FieldOfView: 90
     OrthographicSize: 5
-    NearClipPlane: 0.3
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -16668,6 +16715,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 239168207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1127995085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127995087}
+  m_Layer: 0
+  m_Name: Camera Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1127995087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127995085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1620640112}
+  - {fileID: 1730816005}
+  m_Father: {fileID: 1778605001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1144186644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17051,6 +17131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69015d0fb1f137c4f943133ebbe4a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSafeCombination: 0
   clickEffect: {fileID: 3170610550430178373, guid: a4b34e0f193599247a8cbccc6f16ef4d,
     type: 3}
   clickableLayers:
@@ -17059,20 +17140,6 @@ MonoBehaviour:
   interactableLayers:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &1212191077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212191066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6769c8b38e78d7340af67d6b8dacf024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 239535097}
-  focusCamera: {fileID: 1056759757}
 --- !u!1001 &1217955317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20341,6 +20408,46 @@ Transform:
   - {fileID: 1375126092}
   m_Father: {fileID: 138478508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1449620859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9032057211456673312, guid: 1929e272d173d0e4cb1e456190d0b542,
+    type: 3}
+  m_PrefabInstance: {fileID: 406678411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1449620863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449620859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72ab4f128b619641b3b69f00bb809df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safe: {fileID: 11400000, guid: 4daf77d27230576469648ca9aff6a343, type: 2}
+--- !u!65 &1449620864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449620859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.107265, y: 47.222736, z: 74.21909}
+  m_Center: {x: -5.008312, y: 20.41947, z: -37.109577}
 --- !u!1001 &1460980698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22112,6 +22219,108 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 876910504}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1620640111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620640112}
+  - component: {fileID: 1620640114}
+  - component: {fileID: 1620640113}
+  - component: {fileID: 1620640115}
+  m_Layer: 0
+  m_Name: Safe Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1620640112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620640111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127995087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620640113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620640111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6769c8b38e78d7340af67d6b8dacf024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 239535097}
+  focusCamera: {fileID: 712872300}
+--- !u!114 &1620640114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620640111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0c9a48710e1cc45aa1a211c1a8eef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: If possible, Click on the safe
+  Event: {fileID: 11400000, guid: 4daf77d27230576469648ca9aff6a343, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1620640113}
+        m_TargetAssemblyTypeName: CameraFocusOnPoint, Assembly-CSharp
+        m_MethodName: FocusOnPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1449620864}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1620640115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620640111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 792483a5586bcb346ab87e61ddc89982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcam: {fileID: 712872300}
 --- !u!4 &1634529487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4866154646728850, guid: c928f883aa7cdcf41a6faa362ed971bc,
@@ -22211,7 +22420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706804113311570, guid: 2df4114bb280d25418ca52939e84b23f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0847168
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 4706804113311570, guid: 2df4114bb280d25418ca52939e84b23f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22530,9 +22739,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 25.97
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -22712,6 +22921,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 806239171}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1730816004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730816005}
+  - component: {fileID: 1730816007}
+  - component: {fileID: 1730816006}
+  m_Layer: 0
+  m_Name: Electrical Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1730816005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730816004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127995087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1730816006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730816004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6769c8b38e78d7340af67d6b8dacf024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 239535097}
+  focusCamera: {fileID: 1056759757}
+--- !u!114 &1730816007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730816004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0c9a48710e1cc45aa1a211c1a8eef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Click on the Electrical Box
+  Event: {fileID: 11400000, guid: df08ebb08492e6e448046cf6a78b8752, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1730816006}
+        m_TargetAssemblyTypeName: CameraFocusOnPoint, Assembly-CSharp
+        m_MethodName: FocusOnPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 436831325}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &1753393188
 Mesh:
   m_ObjectHideFlags: 0
@@ -23088,8 +23385,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1778605001}
   - component: {fileID: 1778605002}
-  - component: {fileID: 1778605005}
-  - component: {fileID: 1778605004}
   - component: {fileID: 1778605006}
   m_Layer: 0
   m_Name: GameManager
@@ -23110,7 +23405,8 @@ Transform:
   m_LocalPosition: {x: -33.93, y: 62.146706, z: -36.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1127995087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1778605002
@@ -23125,63 +23421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54ffa49b997830409346da22e55e5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surface: {fileID: 0}
-  emptyGameEvent: {fileID: 11400000, guid: 0f301da5776a1054bb513b9ccdf18ec1, type: 2}
---- !u!114 &1778605004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778605000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0c9a48710e1cc45aa1a211c1a8eef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: Click on the Electrical Box
-  Event: {fileID: 11400000, guid: df08ebb08492e6e448046cf6a78b8752, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1778605005}
-        m_TargetAssemblyTypeName: CameraFocusOnPoint, Assembly-CSharp
-        m_MethodName: FocusOnPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 436831325}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1778605005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778605000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6769c8b38e78d7340af67d6b8dacf024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 239535097}
-  focusCamera: {fileID: 1056759757}
 --- !u!114 &1778605006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23211,7 +23450,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1778605005}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraFocusOnPoint, Assembly-CSharp
         m_MethodName: FocusOnPlayer
         m_Mode: 1
@@ -27642,10 +27881,230 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2407121361004337921, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337923, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337925, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337927, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337929, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2407121361004337931, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337931, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337933, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337935, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337937, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337939, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337941, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337943, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337945, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337947, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337949, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337951, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337985, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337987, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337989, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337991, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337993, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337995, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337997, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004337999, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338001, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338003, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338009, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338011, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338013, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338015, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338017, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338019, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338023, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338025, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338027, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338029, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338031, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338033, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338035, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338037, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338039, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338041, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338045, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407121361004338047, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2407121361004431147, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
         type: 3}
@@ -27709,10 +28168,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1212191075}
-    - targetCorrespondingSourceObject: {fileID: 2407121361004337931, guid: 3f45c0abdd9b7294fb549ec340d3a5fe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1212191077}
   m_SourcePrefab: {fileID: 100100000, guid: 3f45c0abdd9b7294fb549ec340d3a5fe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

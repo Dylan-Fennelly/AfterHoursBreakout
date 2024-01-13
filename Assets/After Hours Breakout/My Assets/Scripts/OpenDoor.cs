@@ -23,7 +23,7 @@ public class OpenDoor : MonoBehaviour, IInteractable
         }
         else
         {
-
+            return;
         }
         
     }

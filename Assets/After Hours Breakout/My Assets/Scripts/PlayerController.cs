@@ -8,17 +8,23 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
     NavMeshAgent agent;
     Animator animator;
+    [SerializeField]
+    private bool hasSafeCombination = false;
 
     [Header("Movement")]
-    [SerializeField] ParticleSystem clickEffect;
-    [SerializeField] LayerMask clickableLayers;
-    [SerializeField] LayerMask interactableLayers;
+    [SerializeField]
+    ParticleSystem clickEffect;
+    [SerializeField] 
+    LayerMask clickableLayers;
+    [SerializeField]
+    LayerMask interactableLayers;
 
     float lookRotationSpeed = 8f;
 
     // New fields for delayed interaction
     bool isMovingToInteractable = false;
     IInteractable currentInteractable;
+
 
     void Awake()
     {
@@ -74,7 +80,7 @@ public class PlayerController : MonoBehaviour
         SetAnimations();
 
         // Check if reached the destination and trigger interaction
-        if (isMovingToInteractable && !agent.pathPending && agent.remainingDistance < 0.1f)
+        if (isMovingToInteractable && !agent.pathPending && agent.remainingDistance < 1f)
         {
             // Interaction
             currentInteractable?.Interact();

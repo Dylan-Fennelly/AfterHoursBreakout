@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public NavMeshSurface surface;
-    public EmptyGameEvent emptyGameEvent;
+
 
     private void Awake()
     {
@@ -29,12 +28,6 @@ public class GameManager : MonoBehaviour
         {   
             Destroy(gameObject);
         }
-    }
-    
-    [Button]
-    public void turnOnLights()
-    {
-        emptyGameEvent.Raise(new Empty());
     }
 
 }
