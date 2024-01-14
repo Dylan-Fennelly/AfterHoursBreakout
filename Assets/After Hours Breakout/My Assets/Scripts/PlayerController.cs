@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
     NavMeshAgent agent;
     Animator animator;
-    [SerializeField]
-    private bool hasSafeCombination = false;
-
     [Header("Movement")]
+    [SerializeField]
+    private float interactionDistanceThreashold = 1f;
+    [SerializeField]
+    private bool canMove = true;
     [SerializeField]
     ParticleSystem clickEffect;
     [SerializeField] 
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
 
     float lookRotationSpeed = 8f;
 
-    // New fields for delayed interaction
+    bool hasKey = false;
+
     bool isMovingToInteractable = false;
     IInteractable currentInteractable;
 
@@ -43,16 +45,20 @@ public class PlayerController : MonoBehaviour
 
     void ClickToMove()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
+        // Check if movement is allowed
+        if (canMove)
         {
-            // If it's not interactable, move to the clicked point
-            if (!isMovingToInteractable)
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
             {
-                agent.destination = hit.point;
-                if (clickEffect != null)
+                // If it's not interactable, move to the clicked point
+                if (!isMovingToInteractable)
                 {
-                    Instantiate(clickEffect, hit.point + new Vector3(0, 0.1f, 0), clickEffect.transform.rotation);
+                    agent.destination = hit.point;
+                    if (clickEffect != null)
+                    {
+                        Instantiate(clickEffect, hit.point + new Vector3(0, 0.1f, 0), clickEffect.transform.rotation);
+                    }
                 }
             }
         }
@@ -60,16 +66,20 @@ public class PlayerController : MonoBehaviour
 
     void TryInteract()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, interactableLayers))
+        // Check if movement is allowed
+        if (canMove)
         {
-            // Check if the clicked object is an interactive object
-            if (hit.transform.TryGetComponent<IInteractable>(out var interactable))
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, interactableLayers))
             {
-                // Move to the interactable object before interacting
-                isMovingToInteractable = true;
-                currentInteractable = interactable;
-                agent.destination = hit.point;
+                // Check if the clicked object is an interactive object
+                if (hit.transform.TryGetComponent<IInteractable>(out var interactable))
+                {
+                    // Move to the interactable object before interacting
+                    isMovingToInteractable = true;
+                    currentInteractable = interactable;
+                    agent.destination = hit.point;
+                }
             }
         }
     }
@@ -80,7 +90,7 @@ public class PlayerController : MonoBehaviour
         SetAnimations();
 
         // Check if reached the destination and trigger interaction
-        if (isMovingToInteractable && !agent.pathPending && agent.remainingDistance < 1f)
+        if (isMovingToInteractable && !agent.pathPending && agent.remainingDistance < interactionDistanceThreashold)
         {
             // Interaction
             currentInteractable?.Interact();
@@ -104,14 +114,7 @@ public class PlayerController : MonoBehaviour
 
     void SetAnimations()
     {
-        if (agent.velocity == Vector3.zero)
-        {
-            animator.SetBool("isWalking", false);
-        }
-        else
-        {
-            animator.SetBool("isWalking", true);
-        }
+        animator.SetBool("isWalking", agent.velocity != Vector3.zero);
     }
 
     void OnEnable()
@@ -122,5 +125,9 @@ public class PlayerController : MonoBehaviour
     void OnDisable()
     {
         input.Disable();
+    }
+    public void setHasKey()
+    {
+        hasKey = true;
     }
 }
