@@ -11,14 +11,22 @@ public class CameraFocusOnPoint : MonoBehaviour
     private CinemachineVirtualCamera playerCamera;
     [SerializeField]
     private CinemachineVirtualCamera focusCamera;
+    [SerializeField]
+    private SkinnedMeshRenderer PlayerMesh;
     [Button]
+    private void Awake()
+    {
+        PlayerMesh = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SkinnedMeshRenderer>();
+    }
     public void FocusOnPoint()
     {
+        PlayerMesh.enabled = false;
         changeCamera();
     }
     [Button]
     public void FocusOnPlayer()
     {
+        PlayerMesh.enabled = true;
         changeCameraBack();
     }
 

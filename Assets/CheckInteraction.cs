@@ -9,6 +9,7 @@ public class CheckInteraction : MonoBehaviour, IInteractable
     private GameEvent safe;
     public void Interact()
     {
+        if(GameManager.hasSafeCombination)
         safe.Raise();
     }
 }

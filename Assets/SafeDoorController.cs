@@ -9,9 +9,20 @@ public class SafeDoorController : MonoBehaviour
     [SerializeField]
     private GameEvent safeUnlocked;
     [SerializeField]
+    private SafeCombination safeCombinationData;
+    [SerializeField]
     private string password = "1234";
     [SerializeField]
     private string input = "";
+
+    private void Awake()
+    {
+        if (safeCombinationData != null)
+        {
+            password = safeCombinationData.combination;
+        }
+
+    }
 
     public void ButtonPressed(string buttonValue)
     {

@@ -12,7 +12,9 @@ public class OpenDoor : MonoBehaviour, IInteractable
     [SerializeField]
     private string animatorBoolName = "doorOpened";
     [SerializeField]
-    private bool isLocked = false;
+    private string animatorTriggerName = "";
+    [SerializeField]
+    protected bool isLocked = false;
     //Use odin to make a button that trggers the function in the editer
     [Button]
     public virtual void Interact()
@@ -21,9 +23,9 @@ public class OpenDoor : MonoBehaviour, IInteractable
         {
             animator.SetBool(animatorBoolName, true);
         }
-        else
+        else if(!string.IsNullOrEmpty(animatorTriggerName))
         {
-            return;
+            animator.SetTrigger(animatorTriggerName);
         }
         
     }
