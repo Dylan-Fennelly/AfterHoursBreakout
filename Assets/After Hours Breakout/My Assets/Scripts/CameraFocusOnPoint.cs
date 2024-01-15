@@ -32,16 +32,16 @@ public class CameraFocusOnPoint : MonoBehaviour
 
     private void changeCameraBack()
     {
-        playerCamera.Priority++;
-        focusCamera.Priority--;
+        playerCamera.Priority=1;
+        focusCamera.Priority=0;
 
     }
 
     //Transitions the ciew to the selected camera
     private void changeCamera()
     {
-        playerCamera.Priority -- ;
-        focusCamera.Priority ++;
+        playerCamera.Priority = 0 ;
+        focusCamera.Priority =1;
     }
 
 }

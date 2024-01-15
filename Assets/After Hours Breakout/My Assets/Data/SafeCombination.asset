@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1347e2718b77fbc42abb7c4382ddd928, type: 3}
   m_Name: SafeCombination
   m_EditorClassIdentifier: 
-  combination: 1234
+  combination: 2345
