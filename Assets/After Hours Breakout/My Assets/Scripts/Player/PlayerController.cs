@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
+//Script based on https://github.com/ItsPogle/Unity-Mouse-Click-Movement-Template/blob/main/Episode%201%20-%20Mouse%20Click%20Movement/Scripts/PlayerController.cs
 public class PlayerController : MonoBehaviour
 {
     PlayerInput input;
